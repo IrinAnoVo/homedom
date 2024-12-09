@@ -26,8 +26,17 @@ public class Zadachi4 {
 
 
         // 13. Сравнить содержимое двух массивов целых чисел.
-//            int[] array1 = {1, 2, 3};
-//            int[] array2 = {1, 2, 3};
+            int[] array1 = {1, 2, 3};
+            int[] array2 = {1, 2, 3};
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i]!= array2[j]) {
+                    System.out.println("Arrays are not equal");
+                    return;
+                }
+            }
+        }
+
 
 
         // 14. Генерация нового массива из сумм элементов двух массивов.

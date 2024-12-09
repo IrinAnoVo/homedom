@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 
     public class Zadachi {
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //       // 16. Найти все пары элементов, сумма которых равна заданному числу.
 //        int[] array = {1, 2, 3, 4, 5};
 //        int target = 6;
@@ -184,11 +184,11 @@ import java.util.Arrays;
 //        }
 //        System.out.println(sum);
 //    }
-//        // 30. Удалить все дубликаты из массива.
-//        int[] array = {1, 2, 2, 3, 4, 4, 5};
-//        array = Arrays.stream(array).distinct().toArray();
-//
-//        System.out.println(Arrays.toString(array));
-//
-//    }
+        // 30. Удалить все дубликаты из массива.
+        int[] array = {1, 2, 2, 3, 4, 4, 5};
+        array = Arrays.stream(array).distinct().toArray();
+
+        System.out.println(Arrays.toString(array));
+
+    }
 }
