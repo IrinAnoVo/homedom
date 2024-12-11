@@ -1,7 +1,7 @@
 package dom;
 
-import java.util.Arrays;
 
+import java.util.Arrays;
 
 public class Zadachi4 {
     public static void main(String[] args) {
@@ -13,15 +13,11 @@ public class Zadachi4 {
 
         // 12. Найти и вывести все строки одинаковой длины.
 //        String[] array = {"apple", "banana", "cherry", "dog", "cat"};
-//        int maxLength = array[0].length();
-//        for (String str : array) {
-//            if (str.length() > maxLength) {
-//                maxLength = str.length();
-//            }
-//        }
-//        for (String str : array) {
-//            if (str.length() == maxLength) {
-//                System.out.println(str);
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = i + 1; j < array.length; j++) {
+//                if (array[i].length() == array[j].length()) {
+//                    System.out.println("Строки одинаковой длины: " + array[i] + " и " + array[j]);
+//                }
 //            }
 //        }
 
@@ -39,6 +35,13 @@ public class Zadachi4 {
 //        }
 
 
+        // 13. Сравнить содержимое двух массивов целых чисел.
+//        int[] array1 = {1, 2, 3};
+//        int[] array2 = {1, 2, 3};
+//        boolean f = Arrays.equals(array1, array2);
+//        System.out.println(f);
+
+
         // 14. Генерация нового массива из сумм элементов двух массивов.
 //            int[] array1 = {1, 2, 3};
 //            int[] array2 = {4, 5, 6};
@@ -51,19 +54,19 @@ public class Zadachi4 {
 
         // 15. Найти уникальные значения в массиве строк.
 //            String[] array = {"apple", "banana", "apple", "cherry", "banana"};
-//            int uniqueCount = 0;
+//        boolean unikumCode; //добавлена переменная, которая по умолчанию явл true для каждого элемента
 //        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < i; j++) {
-//                if (array[j]!= null && array[i]!= null && array[j].equals(array[i])) {
-//                    array[i] = null;
-//                    uniqueCount++;
-//                    break;
-//                }
-//                if (array[j] == null) {
+//            unikumCode = true;
+//            for (int j = 0; j < array.length; j++) {
+//
+//                if (array[i].equals(array[j]) && (i != j)) {
+//                    unikumCode = false;
 //                    break;
 //                }
 //            }
-//            System.out.println(uniqueCount);
+//            if(unikumCode) {
+//                System.out.println(array[i]);
+//            }
 //        }
 
 
@@ -83,19 +86,18 @@ public class Zadachi4 {
 //                uniqueCount++;
 //            }
 //        }
-//        for (String str :array) {
-//            if (str!= null) {
-//                System.out.println(str);
+//        for (String string :array) {
+//            if (string!= null) {
+//                System.out.println(string);
 //            }
 //        }
-//        System.out.println(uniqueCount);
-
+//        System.out.println("Количество уникальных значений: " + uniqueCount);
 
 
     // 17. Объединить два массива строк в один.
-//            String[] array1 = {"apple", "banana"};
-//            String[] array2 = {"cherry", "date"};
-//            String[] resultArray = new String[array1.length + array2.length];
+//        String[] array1 = {"apple", "banana"};
+//        String[] array2 = {"cherry", "date"};
+//        String[] resultArray = new String[array1.length + array2.length];
 //        for (int i = 0; i < array1.length; i++) {
 //            resultArray[i] = array1[i];
 //        }
@@ -130,12 +132,12 @@ public class Zadachi4 {
 
 
     // 20. Создать массив строк из первых букв элементов другого массива.
-//        String[] array = {"apple", "banana", "cherry"};
-//        String[] resultArray = new String[array.length];
-//        for (int i = 0; i < array.length; i++) {
-//            resultArray[i] = Character.toString(array[i].charAt(0));
-//        }
-//        System.out.println(Arrays.toString(resultArray));
+        String[] array = {"apple", "banana", "cherry"};
+        String[] resultArray = new String[array.length];
+        for (int i = 0; i < array.length; i++) {
+            resultArray[i] = Character.toString(array[i].charAt(0));
+        }
+        System.out.println(Arrays.toString(resultArray));
 
-}
+    }
 }

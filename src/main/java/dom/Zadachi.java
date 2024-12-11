@@ -1,8 +1,9 @@
 package dom;
+
 import java.util.Arrays;
 
 
-    public class Zadachi {
+public class Zadachi {
     public static void main(String[] args) {
 //       // 16. Найти все пары элементов, сумма которых равна заданному числу.
 //        int[] array = {1, 2, 3, 4, 5};
@@ -57,7 +58,7 @@ import java.util.Arrays;
 //    }
 
 //        // 21. Упорядочить массив по возрастанию.
-//        int[] array = {4, 2, 7, 1, 3};
+//        int[] array = {4, 2, -2, 7, 1, 3, -7};
 //        for (int i = 0; i < array.length; i++) {
 //            for (int j = 0; j < array.length - 1; j++) {
 //                if (array[j] > array[j + 1]) {
@@ -89,7 +90,7 @@ import java.util.Arrays;
 //        System.out.println(sum);
 //    }
 //        // 24. Найти произведение всех элементов массива.
-//        int[] array = {1, 2, 3, 4};
+//        int[] array = {2, 2, 3, 4};
 //        int multiply = array[0];
 //        for (int i = 1; i < array.length; i++) {
 //            multiply = multiply * array[i];
@@ -161,16 +162,20 @@ import java.util.Arrays;
 //        int currentLength = 1;
 //        for (int i = 0; i < array.length - 1; i++) {
 //            if (array[i] == array[i + 1]) {
-//               currentLength++;
-//            }else {
+//                currentLength++;
+//            } else {
 //                if (currentLength > maxLength) {
 //                    maxLength = currentLength;
 //                    currentLength = 1;
 //                }
+//                if (currentLength > maxLength) {
+//                    maxLength = currentLength;
+//                }
 //            }
 //        }
 //        System.out.println(maxLength);
-//    }
+
+
 //        // 29. Найти сумму положительных элементов, расположенных после первого отрицательного.
 //        int[] array = {1, -2, 3, 4, -5};
 //        int sum = 0;
@@ -183,12 +188,14 @@ import java.util.Arrays;
 //            }
 //        }
 //        System.out.println(sum);
-//    }
+//
         // 30. Удалить все дубликаты из массива.
-        int[] array = {1, 2, 2, 3, 4, 4, 5};
-        array = Arrays.stream(array).distinct().toArray();
+//        int[] array = {1, 2, 2, 3, 4, 4, 5};
+//        array = Arrays.stream(array).distinct().toArray();
+//
+//        System.out.println(Arrays.toString(array));
+//    }
 
-        System.out.println(Arrays.toString(array));
 
     }
 }

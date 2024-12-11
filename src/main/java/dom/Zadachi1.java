@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Zadachi1 {
 
-    //public static void main(String[] args) {
+    public static void main(String[] args) {
 //    // 1. Найти сумму элементов массива.
 //    int[] array = {1, 2, 3, 4};
 //    int sum = 0;
@@ -155,11 +155,18 @@ public class Zadachi1 {
 //        System.out.println(secondMin);
 //    }
 //    // 15. Переставить элементы массива в обратном порядке.
-        int[] array = {1, 2, 3, 4};
-        int min = 0;
+//        int[] array = {1, 2, 3, 4};
+//        int reset = 0;
+//        int temp;
+//        for (int i = 0; i < array.length / 2; i++) {
+//            temp = array[i];
+//            array[i] = array[array.length - 1 - i];
+//            array[array.length - 1 - i] = temp;
+//
+//        }
+//        System.out.println(Arrays.toString(array));
 
-
-
+    }
 }
 
 
