@@ -69,28 +69,29 @@ public class Company {
                 maxEmployee = department.getEmployees()[i];
             }
         }
-        System.out.println("Employee with the highest salary in department " + department.getName() + ": " + maxEmployee);
+        System.out.println("Сотрудник: " + department.getName() + ": " + maxEmployee);
 
     }
 
 
     public static void main(String[] args) {
-        float maxSalary = 0;
-        Employee1 maxEmployee = null;
+        float minSalary = 0;
+        Employee1 minEmployee = null;
         Company[] companies = generateCompanies(10);
         for (int i = 0; i < companies.length; i++) {
             Department[] departments = companies[i].getDepartment();
             for (int j = 0; j < departments.length; j++) {
                 Employee1[] employees = departments[j].getEmployees();
                 for (int k = 0; k < employees.length; k++) {
-                    if (employees[k].getSalary() > maxSalary) {
-                        maxSalary = employees[k].getSalary();
-                        maxEmployee = employees[k];
+                    if (employees[k].getSalary() > minSalary) {
+                        minSalary = employees[k].getSalary();
+                        minEmployee = employees[k];
                     }
                 }
             }
         }
-        System.out.println("Employee with the highest salary: " + maxEmployee);
+        System.out.println("Сотрудник с миниимальной зарплатой: " + minEmployee);
+
     }
 
     private static Company[] generateCompanies(int i) {
