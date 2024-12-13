@@ -4,7 +4,7 @@ public class Employee1 {
     private int id;
     private String name;
     private boolean gender;
-    private float salary;
+    private double salary;
 
     public Employee1(int id, String name, boolean gender, float salary) {
         this.id = id;
@@ -37,7 +37,7 @@ public class Employee1 {
         this.gender = gender;
     }
 
-    public float getSalary() {
+    public double getSalary() {
         return salary;
     }
 
@@ -54,5 +54,13 @@ public class Employee1 {
                 ", salary=" + salary +
                 '}';
     }
+//    public  void gender1 (boolean gender){
+//        if(gender == true) {
+//            System.out.println("Gender: Male");
+//        }
+//        else {
+//            System.out.println("Gender: Female");
+//        }
+//    }
 }
 

@@ -3,18 +3,17 @@ package company;
 import java.util.Arrays;
 import java.util.Random;
 
-
 public class Company {
     private int id;
     private String name;
     private String address;
-    private Department[] department;
+    private Department[] departments;
 
-    public Company(int id, String name, String address, Department[] department) {
+    public Company(int id, String name, String address, Department[] departments) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.department = department;
+        this.departments = departments;
 
     }
 
@@ -43,11 +42,11 @@ public class Company {
     }
 
     public Department[] getDepartment() {
-        return department;
+        return departments;
     }
 
-    public void setDepartment(Department[] department) {
-        this.department = department;
+    public void setDepartment(Department[] departments) {
+        this.departments = departments;
     }
 
     @Override
@@ -56,68 +55,41 @@ public class Company {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", department=" + Arrays.toString(department) +
+                ", department=" + Arrays.toString(departments) +
                 '}';
     }
 
-    public void maxSalary(Company company, Department department, Employee1 employee1) {
-        float maxSalary = 0;
-        Employee1 maxEmployee = null;
-        for (int i = 0; i < department.getEmployees().length; i++) {
-            if (department.getEmployees()[i].getSalary() > maxSalary) {
-                maxSalary = department.getEmployees()[i].getSalary();
-                maxEmployee = department.getEmployees()[i];
-            }
-        }
-        System.out.println("Сотрудник: " + department.getName() + ": " + maxEmployee);
-
-    }
-
-
-    public static void main(String[] args) {
-        float minSalary = 0;
-        Employee1 minEmployee = null;
-        Company[] companies = generateCompanies(10);
-        for (int i = 0; i < companies.length; i++) {
-            Department[] departments = companies[i].getDepartment();
-            for (int j = 0; j < departments.length; j++) {
-                Employee1[] employees = departments[j].getEmployees();
-                for (int k = 0; k < employees.length; k++) {
-                    if (employees[k].getSalary() > minSalary) {
-                        minSalary = employees[k].getSalary();
-                        minEmployee = employees[k];
-                    }
+    public void findEmployeesWithHigherSalary (Employee1 maxemployee) {
+        System.out.println("Сотрудник: " + maxemployee.getName() + " с меньшей зарплатой: " + maxemployee.getSalary());
+        //создаем метод поиска и в for (int i=0;i<в компании.всех отделов;i++)
+        for (int i = 0; i < departments.length; i++) {
+            //все отделы компании
+            Department department = departments[i];
+            for (int j = 0; j < department.getEmployees().length; j++) {
+                //все сотрудники отдела
+                Employee1 employee = department.getEmployees()[j];
+                if (employee.getSalary() > maxemployee.getSalary()) {
+                    // сотрудник с большей зп > выбранный сотрудник для сравнения
+                    System.out.println("У сотрудника: " + employee.getName() + " зп больше, чем зп у : " + maxemployee.getName());
                 }
             }
         }
-        System.out.println("Сотрудник с миниимальной зарплатой: " + minEmployee);
-
     }
 
-    private static Company[] generateCompanies(int i) {
-        Company[] companies = new Company[i];
-        Random random = new Random();
-        for (int j = 0; j < companies.length; j++) {
-            companies[j] = new Company(random.nextInt(1), "Company " + j, "Address " + j, generateDepartments(random.nextInt(5)));
-        }
-        return companies;
-    }
+    public static void main(String[] args) {
+        Employee1 employee1 = new Employee1((1), "Pasha", true, 3950);
+        Employee1 employee2 = new Employee1((2), "Masha", false, 3600);
+        Employee1 employee3 = new Employee1((3), "Vity", false, 3950);
+        Employee1 employee4 = new Employee1((4), "Oleg", true, 3500);
+        Employee1 employee5 = new Employee1((5), "Misha", true, 3800);
 
-    private static Department[] generateDepartments(int i) {
-        Department[] departments = new Department[i];
-        Random random = new Random();
-        for (int j = 0; j < departments.length; j++) {
-            departments[j] = new Department(random.nextInt(5), "Department " + j, "Address " + j, generateEmployees(random.nextInt(5)));
-        }
-        return departments;
-    }
+        Department department = new Department((1), "Bich", "2 One St", new Employee1[]{});
 
-    private static Employee1[] generateEmployees(int i) {
-        Employee1[] employees = new Employee1[i];
-        Random random = new Random();
-        for (int j = 0; j < employees.length; j++) {
-            employees[j] = new Employee1(random.nextInt(200), "Employee " + j, random.nextBoolean(), random.nextFloat());
-        }
-        return employees;
+        Company company = new Company((1), "More", "2 One St", new Department[1]);
+
+        //меньшая зп у Олега
+        Employee1 maxEmployee = employee4;
+        //ищем у кого зп больше
+        company.findEmployeesWithHigherSalary (maxEmployee);
     }
 }

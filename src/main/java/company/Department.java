@@ -57,5 +57,9 @@ public class Department {
                 ", employees=" + Arrays.toString(employees) +
                 '}';
     }
+
+//    public void employee4 (Department department, Employee1 employee) {
+//        Employee1[] employees = department.employees;
+//    }
 }
 
