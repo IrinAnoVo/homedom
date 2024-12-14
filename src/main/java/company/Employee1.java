@@ -29,7 +29,7 @@ public class Employee1 {
         this.name = name;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return gender;
     }
 

@@ -59,37 +59,37 @@ public class Company {
                 '}';
     }
 
-    public void findEmployeesWithHigherSalary (Employee1 maxemployee) {
-        System.out.println("Сотрудник: " + maxemployee.getName() + " с меньшей зарплатой: " + maxemployee.getSalary());
+    public void findEmployeesWithHigherSalary(Employee1 minEmployee) {
         //создаем метод поиска и в for (int i=0;i<в компании.всех отделов;i++)
+        System.out.println("Сотрудник: " + minEmployee.getName() + " с зарплатой: " + minEmployee.getSalary());
+        //все отделы компании
         for (int i = 0; i < departments.length; i++) {
-            //все отделы компании
             Department department = departments[i];
+            //все сотрудники отдела
             for (int j = 0; j < department.getEmployees().length; j++) {
-                //все сотрудники отдела
                 Employee1 employee = department.getEmployees()[j];
-                if (employee.getSalary() > maxemployee.getSalary()) {
-                    // сотрудник с большей зп > выбранный сотрудник для сравнения
-                    System.out.println("У сотрудника: " + employee.getName() + " зп больше, чем зп у : " + maxemployee.getName());
+                // сотрудник с большей зп > выбранный сотрудник для сравнения
+                if (employee.getSalary() > minEmployee.getSalary()) {
+                    System.out.println("В отделе: " + "(" + department.getName() + ")" + " у сотрудника: " + employee.getName() + " зп больше, чем зп у сотрудника: " + minEmployee.getName());
                 }
             }
         }
     }
 
     public static void main(String[] args) {
-        Employee1 employee1 = new Employee1((1), "Pasha", true, 3950);
-        Employee1 employee2 = new Employee1((2), "Masha", false, 3600);
-        Employee1 employee3 = new Employee1((3), "Vity", false, 3950);
-        Employee1 employee4 = new Employee1((4), "Oleg", true, 3500);
-        Employee1 employee5 = new Employee1((5), "Misha", true, 3800);
 
-        Department department = new Department((1), "Bich", "2 One St", new Employee1[]{});
+        Employee1 employee1 = new Employee1(1, "Pasha", true, 3950);
+        Employee1 employee2 = new Employee1(2, "Masha", false, 3600);
+        Employee1 employee3 = new Employee1(3, "Vity", false, 3950);
+        Employee1 employee4 = new Employee1(4, "Oleg", true, 3500);
+        Employee1 employee5 = new Employee1(5, "Misha", true, 3800);
 
-        Company company = new Company((1), "More", "2 One St", new Department[1]);
-
-        //меньшая зп у Олега
-        Employee1 maxEmployee = employee4;
+        Department department = new Department(1, "Bich", "2 One St", new Employee1[]{employee1, employee2, employee3, employee4, employee5});
         //ищем у кого зп больше
-        company.findEmployeesWithHigherSalary (maxEmployee);
+        Company com1 = new Company(1, "More", "2 One St", new Department[]{department});
+        //меньшая зп у Олега
+        Employee1 minEmployee = employee4;
+        //вызываем метод для поиска сотрудников с большей зарплатой
+        com1.findEmployeesWithHigherSalary(minEmployee);
     }
 }
