@@ -86,10 +86,10 @@ public class Company {
 
         Department department = new Department(1, "Bich", "2 One St", new Employee1[]{employee1, employee2, employee3, employee4, employee5});
         //ищем у кого зп больше
-        Company com1 = new Company(1, "More", "2 One St", new Department[]{department});
+        Company company = new Company(1, "More", "2 One St", new Department[]{department});
         //меньшая зп у Олега
         Employee1 minEmployee = employee4;
         //вызываем метод для поиска сотрудников с большей зарплатой
-        com1.findEmployeesWithHigherSalary(minEmployee);
+        company.findEmployeesWithHigherSalary(minEmployee);
     }
 }

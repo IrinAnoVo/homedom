@@ -132,12 +132,12 @@ public class Zadachi4 {
 
 
     // 20. Создать массив строк из первых букв элементов другого массива.
-        String[] array = {"apple", "banana", "cherry"};
-        String[] resultArray = new String[array.length];
-        for (int i = 0; i < array.length; i++) {
-            resultArray[i] = Character.toString(array[i].charAt(0));
-        }
-        System.out.println(Arrays.toString(resultArray));
-
+//        String[] array = {"apple", "banana", "cherry"};
+//        String[] resultArray = new String[array.length];
+//        for (int i = 0; i < array.length; i++) {
+//            resultArray[i] = Character.toString(array[i].charAt(0));
+//        }
+//        System.out.println(Arrays.toString(resultArray));
+//
     }
 }
